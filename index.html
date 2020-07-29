@@ -150,14 +150,14 @@
 						</div>
 						<div class="body">
 							<audio controls="" :src="songSrcList[this.songIndex]">
-								<source ref="audio">
+								<source>
 								当前浏览器不支持audio
 							</audio>
 						</div>
 					</div>
 					<div class="rightBox">
 						<video width="800" height="0" controls="" :src="MVSrcList[this.songIndex]" ref="MV" style="transition:all 1s ease;">
-							<source src="src/videos/TheGreatestShow.mp4" type="video/mp4"></source>
+							<source type="video/mp4"></source>
 							当前浏览器不支持 video直接播放
 						</video>
 					</div>

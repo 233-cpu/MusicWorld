@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Welcome to My Web</title>
+		<link rel="icon" type="image/x-icon" href="src/images/当志愿者.png"/>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			
+			/* 第一屏 */
+			
+			.first{
+				background: url(src/images/bg1.jpg);
+				background-size: 100% 100%;
+			}
+			.first .header{
+				/* background-color: black; */
+				height: 30%;
+				width: 100%;
+			}
+			.first .header>div{
+				float: left;
+			}
+			.first .header .leftBox{
+				height: 100%;
+				width: 30%;
+				/* background-color: #FF0000; */
+			}
+			.first .header .leftBox .ChangeBackground{
+				height: 30%;
+				width: 40%;
+				background-color: orange;
+				border: 1px black solid;
+				border-radius: 20%;
+				text-align: center;
+				line-height: 300%;
+				color: white;
+				margin: 50px auto;
+				cursor: pointer;
+				transition: all 0.5s ease;
+				user-select: none;
+			}
+			.first .header .leftBox .ChangeBackground:hover{
+				background-color: #000000;
+			}
+			.first .header .rightBox{
+				height: 100%;
+				width: 70%;
+				/* background-color: #FFA500; */
+			}
+			.first .header .rightBox .ChangeModeBox{
+				background-color: #a5a5a5;
+				height: 40%;
+				width: 80%;
+				border-radius: 20px;
+				margin: 50px auto;
+			}
+			.first .header .rightBox .ChangeModeBox>div{
+				float: left;
+				width: 15%;
+				height: 50%;
+				margin-top: 25px;
+				margin-left: 25px;
+				user-select: none;
+			}
+			.first .header .rightBox .ChangeModeBox .mode{
+				/* background-color: #FFA500; */
+				line-height:30px;
+				text-align: center;
+				transition: all 0.5s ease;
+				cursor: pointer;
+			}
+			.first .header .rightBox .ChangeModeBox .mode:hover{
+				background-color: #FFA500;
+			}
+			
+			
+			.first .body{
+				/* background-color: aliceblue; */
+				height: 60%;
+				width: 100%;
+			}
+			.first .body>div{
+				float: left;
+			}
+			.first .body .leftBox{
+				height: 100%;
+				width: 40%;
+				/* background-color: red; */
+			}
+			.first .body .rightBox{
+				height: 100%;
+				width: 60%;
+				/* background-color: yellow; */
+			}
+			.first .body .leftBox .header{
+				padding-top: 100px;
+				height: 40%;
+			}
+			.first .body .leftBox .header>div{
+				/* height: 40%; */
+				width: 25%;
+				margin: 20px 20px;
+				color: white;
+				cursor: pointer;
+				transition: all 0.5s ease;
+				text-align: center;
+				border-radius: 10px;
+				user-select: none;
+			}
+			.first .body .leftBox .header>div:hover{
+				background-color: #848484;
+			}
+			/* 第二屏 */
+			
+			.second{
+				background: url(src/images/bg.jpg);
+				background-size: 100% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div id="app">
+			
+			<div class="section first" ref="first">
+				<div class="header">
+					<div class="leftBox">
+						<div class="ChangeBackground" @click="changeBackground">Change Background</div>
+					</div>
+					<div class="rightBox">
+						<div class="ChangeModeBox">
+							<div class="ChangeMode">Change Mode:</div>
+							<div class="mode" onclick="alert('功能正在开发')">落花</div>
+							<div class="mode">飞雁</div>
+							<div class="mode">下雪</div>
+							<div class="mode">无</div>
+						</div>
+					</div>
+				</div>
+				<div class="body">
+					<div class="leftBox">
+						<div class="header">
+							<div class="songName">{{ songName }}</div>
+							<div class="next" @click="nextSong">下一首</div>
+							<div class="toMV" @click="showMV">观看MV</div>
+						</div>
+						<div class="body">
+							<audio controls="" :src="songSrcList[this.songIndex]">
+								<source ref="audio">
+								当前浏览器不支持audio
+							</audio>
+						</div>
+					</div>
+					<div class="rightBox">
+						<video width="800" height="0" controls="" :src="MVSrcList[this.songIndex]" ref="MV" style="transition:all 1s ease;">
+							<source src="src/videos/TheGreatestShow.mp4" type="video/mp4"></source>
+							当前浏览器不支持 video直接播放
+						</video>
+					</div>
+				</div>
+			</div>
+			
+			<div class="section second">
+				
+			</div>
+			
+		</div>
+		
+	</body>
+	<script src="lib/jquery.min.js"></script>
+	<script src="lib/jquery.fullPage.js"></script>
+	<script src="lib/vue.js"></script>
+	<script src="main.js"></script>
+</html>

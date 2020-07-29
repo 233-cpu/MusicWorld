@@ -16,9 +16,9 @@ var app = new Vue({
 			'动力火车 - 当'
 		],
 		songSrcList:[
-			"src/audios/Keala%20Settle,Hugh%20Jackman,Zac%20Efron%20-%20The%20Greatest%20Show.mp3",
-			"src/audios/Loren%20Allred%20-%20Never%20Enough.mp3",
-			"src/audios/动力火车%20-%20当.mp3"
+			"src/audios/TheGreatestShow.mp3",
+			"src/audios/NeverEnough.mp3",
+			"src/audios/当.mp3"
 		],
 		MVSrcList:[
 			"src/videos/TheGreatestShow.mp4",
